@@ -10,6 +10,8 @@ const details = require('./routes/collegeroutes')
 
 const app = express();
 app.use(express.json());
-app.use('/api/collegeDetails', details);
+app.get('/',(req,res)=>res.send('Hello,World'))
+
+app.use('/api/collegeAllDetails', details);
 
 app.listen(5000, console.log('Server running on 5000'));

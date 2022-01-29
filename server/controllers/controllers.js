@@ -1,6 +1,6 @@
 const CollegeDetails = require('../models/details');
 
-exports.getCollegeDetails = async (req, res, next) => {
+exports.getAllCollegeDetails = async (req, res, next) => {
     try{
         const details = await CollegeDetails.find();
 
@@ -9,6 +9,7 @@ exports.getCollegeDetails = async (req, res, next) => {
             length: details.length,
             data: details
         });
+        
     }catch(err){
         return res.status(500).json({
             success: false,
@@ -29,5 +30,20 @@ exports.addDetails = async (req, res, next) => {
         });
     } catch (err) {
         console.log(err);
+    }
+}
+
+
+exports.getSpecifiedCollege = async(req, res, next) =>{
+    try{
+        const detail = await CollegeDetails.findOne({id: req.query.id})
+
+        res.status(201).json({
+            success: true,
+            data: detail
+        });
+    }
+    catch(err){
+        console.log(err)
     }
 }
