@@ -3,14 +3,20 @@ const dotenv = require('dotenv');
 const morgan = require('morgan');
 const connectDB = require('./config/db')
 
+const app = express();
+
+app.set('view engine', 'ejs');
+app.use(express.static("public"));
+
+    
 dotenv.config({ path: './config/config.env'});
 connectDB();
 
 const details = require('./routes/collegeroutes')
 
-const app = express();
 app.use(express.json());
-app.get('/',(req,res)=>res.send('Hello,World'))
+
+
 
 app.use('/api/collegeAllDetails', details);
 
