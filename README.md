@@ -1,9 +1,9 @@
 # Brogrammers-hackathon
 
 Team members -->
-Mirat Shah
-Prathamesh Pawar
-Harsh Patil
+Mirat Shah -
+Prathamesh Pawar -
+Harsh Patil -
 Tanish Shah
 
 Product Screenshots
